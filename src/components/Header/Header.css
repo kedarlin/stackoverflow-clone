@@ -1,0 +1,128 @@
+.header-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 8%;
+    background-color: #ffffff;
+    border-top: 3px #e7700d solid;
+    border-bottom: 1px #dbdee0 solid;
+    align-items: center;
+    position: relative;
+    height: 30px;
+    position: fixed;
+    width: 84%;
+}
+
+.header-logo-img {
+    width: 140px;
+}
+
+.header-menu {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.header-menu-list {
+    background-color: #ffffff;
+    position: absolute;
+    list-style-type: none;
+    border-radius: 5px;
+    width: 140px;
+    padding: 0;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.header-menu-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.header-menu-item:hover {
+    background-color: #f0f0f0;
+}
+.header-items {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    padding: 5px;
+}
+.header-item {
+    color: #6c6b6b;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.header-item:hover {
+    background-color: #eaeaea;
+}
+.header-search-bar {
+    position: relative;
+    align-items: center;
+    width: 50%;
+}
+
+.header-search-input {
+    padding: 8px 30px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+}
+.header-search-input:hover {
+    border: 1px solid #0255a8;
+}
+.search-icon {
+    position: absolute;
+    top: 50%;
+    margin-left: -30px;
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+}
+.header-auth {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+.header-auth-login {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 450;
+    font-size: 13px;
+    color: #1b75d0;
+    border: solid 1px #1b75d0;
+    cursor: pointer;
+}
+.header-auth-login:hover {
+    background-color: #1b76d055;
+}
+.header-auth-signup {
+    margin-left: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 450;
+    font-size: 13px;
+    color: white;
+    background-color: #1b75d0;
+    cursor: pointer;
+}
+.header-auth-signup:hover {
+    background-color: #0255a8;
+}
+.header-profile {
+    align-items: center;
+    padding: 5px;
+    margin-right: 20px;
+}
+.header-profile-img {
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -9,7 +9,7 @@
 
 here the first npm start will run the frontend react server and the second npm will run the backend express server!
 
-Don't forget to add an .env file
+Don't forget to add an .env file in the backend directory
 inside the .env file add
 MONGODB_URI = <mongodb url>
 PORT = <default 3000>

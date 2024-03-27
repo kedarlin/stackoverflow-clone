@@ -44,8 +44,8 @@ To get started with this Stack Overflow clone, follow these simple steps:
 
      ```plaintext
      MONGODB_URI=<your MongoDB URL>
-     PORT=<default is 3000>
-     JWT_SECRET=<a secure string for JWT>
+     PORT= 3005
+     JWT_SECRET=<a secure string for JWT> eg : bulldogatebull
      ```
 
 Happy Learning and Developing!

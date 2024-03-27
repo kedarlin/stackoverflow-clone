@@ -94,13 +94,19 @@ export const voteQuestion = async (req, res, next) => {
     }
 
     // Check if user has already voted
-    if (question.votes.includes(req.user.id)) {
+    if (question.votes.includes(req.body.userId)) {
       return next(errorHandler(400, 'You have already voted on this question'));
     }
 
     // Add user's vote
-    question.votes.push(req.user.id);
+    if(req.body.do === 'up')
+    {
+    question.votes.push(req.body.userId);
     question.votes++;
+    } else {
+      question.votes.remove(req.body.userId)
+      question.votes--;
+    }
 
     await question.save();
 

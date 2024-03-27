@@ -5,5 +5,40 @@
     justify-content: flex-start;
 }
 .question-content {
-    padding: 100px 20px;
+    padding: 60px 20px;
+    width: 100%;
+}
+.question-title {
+    font-size: 30px;
+    font-weight: 450;
+    color: #3f4449;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dbdee0;
+}
+.question-main {
+    display: flex;
+    flex-direction: row;
+}
+.question-main-vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 30px;
+}
+.question-vote {
+    padding: 5px;
+    border: #3f4449 1px solid;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.question-vote:hover {
+    background-color: #faecc6;
+}
+.question-main-tag {
+    color: #437fae;
+    background-color: #edf5fd;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: fit-content;
 }

@@ -16,7 +16,7 @@ const Home = () => {
           throw new Error('Failed to fetch questions');
         }
         const data = await response.json();
-        setQuestions(data); // Assuming the data structure returned from API directly contains an array of questions
+        setQuestions(data);
       } catch (error) {
         console.error(error);
       }

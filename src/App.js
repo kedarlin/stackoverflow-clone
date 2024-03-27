@@ -15,12 +15,6 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/askquestion' element={<Askquestion />} />
           <Route path='/question/:id' element={<Question />} />
-          {/* <Route path='/scanned' element={<Scanned />} />
-          <Route path='/Settings' element={<Settings />}/>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard/:userid" element={<Dashboard />} />
-          <Route path='/alerts' element={<Alerts />} />  */}
         </Routes>
     </Router>
       

@@ -123,13 +123,7 @@ export const viewQuestion = async (req, res, next) => {
       return next(errorHandler(404, 'Question not found'));
     }
 
-    if (question.views.includes(req.body.userId)) {
-      return next(errorHandler(400, 'You have already viewed this question'));
-    }
-
-    question.views.push(req.user.id);
-
-    question.viewsCount = question.views.length;
+    question.viewsCount++;
 
     await question.save();
 

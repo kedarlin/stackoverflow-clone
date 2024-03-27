@@ -47,7 +47,7 @@ const Home = () => {
                 <div className='home-question-activity'>
                   <div className='home-question-acti'>{question.votes} votes</div>
                   <div className='home-question-acti'>{question.answers ? question.answers.length : 0} answers</div>
-                  <div className='home-question-acti'>{question.views} views</div>
+                  <div className='home-question-acti'>{question.viewsCount} views</div>
                 </div>
                 <div className='home-question-content'>
                   <div className='home-question'>{question.title}</div>

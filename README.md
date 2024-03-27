@@ -1,18 +1,51 @@
-# How to Run this web app
-### 'git clone https://github.com/kedarlin/stackoverflow-clone'
-### 'cd stackoverflow-clone'
-### 'npm install'
-### 'npm start'
-### 'cd backend'
-### 'npm install'
-### 'npm start'
+# How to Run this Web App
 
-here the first npm start will run the frontend react server and the second npm will run the backend express server!
+To get started with this Stack Overflow clone, follow these simple steps:
 
-Don't forget to add an .env file in the backend directory
-inside the .env file add
-MONGODB_URI = <mongodb url>
-PORT = <default 3000>
-JWT_SECRET = <some string>
+1. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/kedarlin/stackoverflow-clone
+    ```
 
-Happy Learning!
+2. **Navigate to the Project Directory:**
+    ```bash
+    cd stackoverflow-clone
+    ```
+
+3. **Install Frontend Dependencies:**
+    ```bash
+    npm install
+    ```
+
+4. **Start Frontend React Server:**
+    ```bash
+    npm start
+    ```
+
+5. **Move to the Backend Directory:**
+    ```bash
+    cd backend
+    ```
+
+6. **Install Backend Dependencies:**
+    ```bash
+    npm install
+    ```
+
+7. **Start Backend Express Server:**
+    ```bash
+    npm start
+    ```
+
+8. **Configure Environment Variables:**
+
+   - Create an `.env` file in the backend directory if it doesn't exist.
+   - Inside the `.env` file, include the following variables:
+
+     ```plaintext
+     MONGODB_URI=<your MongoDB URL>
+     PORT=<default is 3000>
+     JWT_SECRET=<a secure string for JWT>
+     ```
+
+Happy Learning and Developing!

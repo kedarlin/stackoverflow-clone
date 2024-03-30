@@ -9,7 +9,7 @@ export const createQuestion = async (req, res, next) => {
   const newQuestion = new Question({
     ...req.body,
   });
-
+  console.log(newQuestion);
   try {
     const savedQuestion = await newQuestion.save();
     res.status(201).json(savedQuestion);
@@ -93,23 +93,23 @@ export const voteQuestion = async (req, res, next) => {
       return next(errorHandler(404, 'Question not found'));
     }
 
-    // Check if user has already voted
-    if (question.votes.includes(req.body.userId)) {
-      return next(errorHandler(400, 'You have already voted on this question'));
-    }
-
-    // Add user's vote
-    if(req.body.do === 'up')
-    {
-    question.votes.push(req.body.userId);
-    question.votes++;
+    if (req.body.action === 'up') {
+      if (question.votes.indexOf(req.body.userId) !== -1) {
+        return next(errorHandler(400, 'You have already voted on this question'));
+      }
+      question.votes.push(req.body.userId);
     } else {
-      question.votes.remove(req.body.userId)
-      question.votes--;
+      if (question.votes.indexOf(req.body.userId) === -1) {
+        return next(errorHandler(400, 'You have not voted on this question'));
+      }
+      try {
+        const index = question.votes.indexOf(req.body.userId);
+        question.votes.splice(index, 1);
+      } catch (error) {
+        return next(errorHandler(500, 'Failed to remove vote'));
+      }
     }
-
-    await question.save();
-
+    question.save();
     res.status(200).json(question);
   } catch (error) {
     next(error);

@@ -45,7 +45,7 @@ const Home = () => {
             <Link to={`/question/${question._id}`} key={index} className='home-questions-link' style={{ textDecoration: 'none', cursor: 'auto' }}>
               <div className='home-questions'>
                 <div className='home-question-activity'>
-                  <div className='home-question-acti'>{question.votes} votes</div>
+                  <div className='home-question-acti'>{question.votes.length} votes</div>
                   <div className='home-question-acti'>{question.answers ? question.answers.length : 0} answers</div>
                   <div className='home-question-acti'>{question.viewsCount} views</div>
                 </div>

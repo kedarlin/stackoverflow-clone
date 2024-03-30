@@ -8,10 +8,11 @@ import { GoTriangleDown, GoTriangleUp } from 'react-icons/go';
 const Question = () => {
   const { id } = useParams();
   const [question, setQuestion] = useState(null);
+
   const handleUpVote = async () => {
     const userId = localStorage.getItem('userId');
     try {
-      const voteRes =  await sendVote(id, userId, 'up');
+      const voteRes = await sendVote(id, userId, 'up');
     } catch (error) {
       console.error('Failed to upvote:', error);
     }
@@ -29,14 +30,13 @@ const Question = () => {
 
   const sendVote = async (questionId, userId, action) => {
     try {
-      await fetch(`http://localhost:3005/api/question/votequestion`, {
+      const res = await fetch(`http://localhost:3005/api/questions/votequestion/${questionId}`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        },
-        body: JSON.stringify({ questionId, userId, action })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, action })
       });
+      const da = await res.json();
+      setQuestion(da);
     } catch (error) {
       throw new Error('Failed to send vote');
     }
@@ -51,7 +51,6 @@ const Question = () => {
         }
         const data = await response.json();
         setQuestion(data);
-        console.log(question);
       } catch (error) {
         console.error(error);
       }
@@ -62,9 +61,6 @@ const Question = () => {
       try {
         await fetch(`http://localhost:3005/api/questions/viewquestion/${questionId}`, {
           method: 'POST',
-          headers: {
-            'authorization': `Bearer ${localStorage.getItem('token')}`
-          },
           body: JSON.stringify({ userId })
         });
       } catch (error) {
@@ -88,9 +84,9 @@ const Question = () => {
               <h2 className='question-title'>{question.title}</h2>
               <div className='question-main'>
                 <div className='question-main-vote'>
-                  <GoTriangleUp className='question-vote' onClick={handleUpVote}/>
-                  <p className='question-votes'>{question.votes}</p>
-                  <GoTriangleDown className='question-vote' onClick={handleDownVote}/>
+                  <GoTriangleUp className='question-vote' onClick={handleUpVote} />
+                  <p className='question-votes'>{question.votes.length}</p>
+                  <GoTriangleDown className='question-vote' onClick={handleDownVote} />
                 </div>
                 <div className='question-main-content'>
                   <p className='question-main-content'>{question.problemDetails}</p>

@@ -23,15 +23,11 @@ const questionSchema = new mongoose.Schema(
       type: [String],
       required: true,
     },
-    votes: {
-      type: Number,
-      default: 0,
-    },
     viewsCount: {
       type: Number,
       default: 0,
     },
-    views: {
+    votes: {
       type: [String],
       default: [],
     },

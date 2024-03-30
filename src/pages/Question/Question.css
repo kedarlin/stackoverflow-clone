@@ -34,6 +34,10 @@
 .question-vote:hover {
     background-color: #faecc6;
 }
+.question-votes {
+    font-size: 20px;
+    font-weight: 600;
+}
 .question-main-tag {
     color: #437fae;
     background-color: #edf5fd;

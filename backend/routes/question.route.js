@@ -9,8 +9,8 @@ router.get('/getquestions', getQuestions);
 router.get('/getquestion/:questionId', getQuestion);
 router.delete('/deletequestion/:questionId/:userId', verifyToken, deleteQuestion);
 router.put('/updatequestion/:questionId/:userId', verifyToken, updateQuestion);
-router.post('/votequestion/:questionId', verifyToken, voteQuestion);
-router.post('/viewquestion/:questionId', verifyToken, viewQuestion);
+router.post('/votequestion/:questionId', voteQuestion);
+router.post('/viewquestion/:questionId', viewQuestion);
 router.post('/answerquestion/:questionId', verifyToken, answerQuestion);
 
 export default router;

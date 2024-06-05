@@ -42,7 +42,7 @@ const Home = () => {
             </div>
           </div>
           {questions.map((question, index) => (
-            <Link to={`/question/${question._id}`} key={index} className='home-questions-link' style={{ textDecoration: 'none', cursor: 'auto' }}>
+            <div key={index} className='home-questions-link'>
               <div className='home-questions'>
                 <div className='home-question-activity'>
                   <div className='home-question-acti'>{question.votes.length} votes</div>
@@ -50,11 +50,15 @@ const Home = () => {
                   <div className='home-question-acti'>{question.viewsCount} views</div>
                 </div>
                 <div className='home-question-content'>
-                  <div className='home-question'>{question.title}</div>
+                  <div className='home-question'>
+                    <Link to={`/question/${question._id}`} style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                      {question.title}
+                    </Link>
+                  </div>
                   <div className='home-question-tags'>{question.tags.join(', ')}</div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

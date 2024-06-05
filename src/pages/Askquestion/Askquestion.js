@@ -10,7 +10,7 @@ const Askquestion = () => {
         title: '',
         problemDetails: '',
         triedDetails: '',
-        tags: ''
+        tags: []
     });
     const [error, setError] = useState('');
 

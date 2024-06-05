@@ -57,6 +57,7 @@
 .home-question {
     font-size: 18px;
     padding: 5px;
+    cursor: pointer;
 }
 .home-question:hover{
     text-decoration: underline;

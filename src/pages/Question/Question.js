@@ -81,7 +81,9 @@ const Question = () => {
         <div className='question-content'>
           {question ? (
             <>
-              <h2 className='question-title'>{question.title}</h2>
+              <h2 className='question-title'>
+                {question.title}
+              </h2>
               <div className='question-main'>
                 <div className='question-main-vote'>
                   <GoTriangleUp className='question-vote' onClick={handleUpVote} />

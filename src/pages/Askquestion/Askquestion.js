@@ -55,7 +55,7 @@ const Askquestion = () => {
         };
         console.log(requestOptions);
         try {
-            const response = await fetch('http://localhost:3005/api/questions/create', requestOptions);
+            const response = await fetch('https://stackoverflow-clone-nine-phi.vercel.app/api/questions/create', requestOptions);
             if (!response.ok) {
                 throw new Error('Failed to create question');
             }

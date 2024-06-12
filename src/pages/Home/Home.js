@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch('http://localhost:3005/api/questions/getquestions');
+        const response = await fetch('https://stackoverflow-clone-nine-phi.vercel.app/api/questions/getquestions');
         if (!response.ok) {
           throw new Error('Failed to fetch questions');
         }
